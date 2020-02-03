@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-// error cannot find module
 import NumberOfEvents from '../src/NumberOfEvents';
 
 
