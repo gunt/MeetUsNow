@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Event from '../src/Event';
 
 
-
+//refactor from the beginning
 class EventList extends Component {
 
     state={
