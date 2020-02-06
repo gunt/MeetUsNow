@@ -1,28 +1,31 @@
 import React, { Component } from 'react';
+import EventList from './EventList';
+import Event from './Event';
+import CitySearch from './CitySearch';
 
 class NumberOfEvents extends Component {
-
   state = {
-    numberOfEvents: 12
-  }
+    query: 32,
+  };
 
   handleInputChanged = (event) => {
     const value = event.target.value;
-    this.setState({ numberOfEvents: value });
+    this.setState({ query: value });
+    this.props.updateEvents(null, null, value);
   }
-
+  
   render() {
-    return(
+    return (
       <div className="numberOfEvents">
-        <label>Number of Events: </label>
         <input
-          type="text"
-          id="numberOfEvents__input"
-          value={this.state.numberOfEvents}
+          type="number"
+          className="numberEvents"
           onChange={this.handleInputChanged}
+          value={this.state.query}
         />
+        <span> Events </span>
       </div>
-    );
+    )
   }
 }
 

@@ -1,28 +1,39 @@
 import React, { Component } from 'react';
 
-
 class Event extends Component {
-
   state = {
-    events: [],
-    showDetails: false,
+    show: false
+  };
+  showDetails = () => {
+    this.setState(prevState => ({
+      show: !prevState.show
+    }))
   }
-
-  handleClick = () => {
-    this.setState({ showDetails: !this.state.showDetails})
-  }
-
+  
   render() {
+    const event = this.props.event;
     return (
       <div className="Event">
-        <div className="eventDate"></div>
-        <div className="eventName"></div>
-        <div className="groupName"></div>
-        <div className="yesRSVP"></div>
-        {/* <EventDetails isOpen={this.state.showDetails} /> */}
-        <button className="details" onClick={this.handleClick}>Details</button>
-      </div>
-    );
-  }
+        <div className="eventName">{event.name}</div>
+        <div className="eventGroup">{event.group.name}</div>
+        <p className="time">{event.local_time} on {event.local_date}</p>
+        <p className="rsvp">{event.yes_rsvp_count} people are going</p>
+        {this.state.show &&
+          <div className="details">
+            {event.venue && event.venue.name && (
+              <div className="eventLocation">{event.venue.city + ', ' + event.venue.address_1}</div>
+            )}
+            <div className="description" dangerouslySetInnerHTML={{__html: event.description}} />
+            <a className="link" href={event.link}>Event link</a>
+      
+          </div>
+    }
+      <button className="detailBtn"
+      onClick={this.showDetails}
+      >Show/hide Details</button>
+    </div>
+  )
+    }
 }
-export default Event;
+
+export default Event
