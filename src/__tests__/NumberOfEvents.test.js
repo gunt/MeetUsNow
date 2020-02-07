@@ -4,6 +4,7 @@ import App from '../App';
 import EventList from '../EventList';
 import Event from '../Event';
 import NumberOfEvents from '../NumberOfEvents';
+
 describe('<NumberOfEvents /> component', () => {
   let NumberOfEventsWrapper;
   beforeAll(() => {

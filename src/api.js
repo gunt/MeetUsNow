@@ -1,5 +1,6 @@
 import { mockEvents } from './mock-events';
 import axios from 'axios';
+
 async function getOrRenewAccessToken(type, key) {
   let url;
   if (type === 'get') {
