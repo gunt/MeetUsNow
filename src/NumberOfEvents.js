@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import EventList from './EventList';
-import Event from './Event';
-import CitySearch from './CitySearch';
 
 class NumberOfEvents extends Component {
   state = {
@@ -11,9 +8,9 @@ class NumberOfEvents extends Component {
   handleInputChanged = (event) => {
     const value = event.target.value;
     this.setState({ query: value });
-    this.props.updateEvents(null, null, value);
+    // this.props.updateEvents(null, null, value);
   }
-  
+
   render() {
     return (
       <div className="numberOfEvents">

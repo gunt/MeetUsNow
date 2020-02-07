@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   padding: 2% 5%;
+  background-color: #fff;
 }
 
 .App * {
@@ -19,8 +20,9 @@ p {
 input[type="text"], input[type="number"] {
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
+  margin: 1%;
   outline: none;
-  border: 1px solid #ccc;
+  border: 0.5px solid #0898ac;
   font-size: 14px;
   line-height: 20px;
   align-self: center;
@@ -64,7 +66,7 @@ input[type="text"], input[type="number"] {
   padding: 10px 10px 20px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid #ccc;
+  border: 1px solid #9be0e9;
   border-radius: 4px;
   position: relative;
 }
