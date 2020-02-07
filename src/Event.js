@@ -20,12 +20,12 @@ class Event extends Component {
         <p className="rsvp">{event.yes_rsvp_count} people are going</p>
         {this.state.show &&
           <div className="details">
-            {event.venue && event.venue.name && (
+            {event.venue && (
               <div className="eventLocation">{event.venue.city + ', ' + event.venue.address_1}</div>
             )}
             <div className="description" dangerouslySetInnerHTML={{__html: event.description}} />
+            <p className="visibility">{event.visibility}</p>
             <a className="link" href={event.link}>Event link</a>
-      
           </div>
     }
       <button className="detailBtn"

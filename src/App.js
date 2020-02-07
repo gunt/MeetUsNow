@@ -10,10 +10,9 @@ import { getEvents } from './api';
 class App extends Component{
   state = {
     events: [],
-    lat: null,
-    lon: null,
     page: null,
   }
+
   componentDidMount() {
       this.updateEvents();
   }
@@ -32,17 +31,16 @@ class App extends Component{
       );
     }
   }
+  
   render(){
   return (
     <div className="App">
       <CitySearch updateEvents={this.updateEvents} />
       <NumberOfEvents updateEvents={this.updateEvents} />
       <EventList events={this.state.events} />
-      
-
-
     </div>
   );
+  }
 }
-}
+
 export default App;
