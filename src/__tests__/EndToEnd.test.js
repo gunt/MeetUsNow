@@ -21,4 +21,13 @@ describe('show/hide an event details', () => {
     const extra = await page.$('.Event .extra');
     expect(extra).toBeNull();
   });
+
+  test('User can expand an event to see its details', async () => {
+    //inspect element to know the class element &
+    // get rid of the No node found for selector: .Event .details-btn ERROR
+    await page.click('.Event .detailBtn'); 
+
+    const extra = await page.$('.Event .extra');
+    expect(extra).toBeDefined();
+  });
 });
