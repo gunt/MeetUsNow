@@ -3,7 +3,8 @@ import { ErrorAlert } from './Alert';
 
 class NumberOfEvents extends Component {
   state = {
-    query: 32,
+    // query: 32,
+    number: 32,
   };
 
   //according to the 4.7 exercise here the code need to change instead 
@@ -22,13 +23,13 @@ class NumberOfEvents extends Component {
 
   render() {
     return (
-      <div className="NumberOfEvents">
+      <div className="numberOfEvents">
         <ErrorAlert text={this.state.errorText} />
         {/* That was tricky how to make the text show - focus here */}
-        <span>Show </span>
+        <span>Show</span>
         <input
           type="number"
-          className="number-of-events"
+          className="numberEvents"
           onChange={this.onNumberChanged}
           value={this.state.number}
         />
