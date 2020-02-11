@@ -3,7 +3,7 @@
   "name": "Meetup Application",
   "icons": [
     {
-      "src": "favicon.png",
+      "src": "icon.png",
       "type": "image/png",
       "sizes": "512x512"
     },
