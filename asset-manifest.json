@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/meetup/static/css/main.08eb015b.chunk.css",
-    "main.js": "/meetup/static/js/main.a7a1bff2.chunk.js",
-    "main.js.map": "/meetup/static/js/main.a7a1bff2.chunk.js.map",
+    "main.js": "/meetup/static/js/main.a873eb4f.chunk.js",
+    "main.js.map": "/meetup/static/js/main.a873eb4f.chunk.js.map",
     "runtime-main.js": "/meetup/static/js/runtime-main.a2b58e33.js",
     "runtime-main.js.map": "/meetup/static/js/runtime-main.a2b58e33.js.map",
     "static/js/2.ba7602b5.chunk.js": "/meetup/static/js/2.ba7602b5.chunk.js",
     "static/js/2.ba7602b5.chunk.js.map": "/meetup/static/js/2.ba7602b5.chunk.js.map",
     "index.html": "/meetup/index.html",
-    "precache-manifest.709a662919e9f0a74debfca137b7fc39.js": "/meetup/precache-manifest.709a662919e9f0a74debfca137b7fc39.js",
+    "precache-manifest.1be8f0f69103f03f256eac817fb9b99b.js": "/meetup/precache-manifest.1be8f0f69103f03f256eac817fb9b99b.js",
     "service-worker.js": "/meetup/service-worker.js",
     "static/css/main.08eb015b.chunk.css.map": "/meetup/static/css/main.08eb015b.chunk.css.map",
     "static/js/2.ba7602b5.chunk.js.LICENSE": "/meetup/static/js/2.ba7602b5.chunk.js.LICENSE"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.a2b58e33.js",
     "static/js/2.ba7602b5.chunk.js",
     "static/css/main.08eb015b.chunk.css",
-    "static/js/main.a7a1bff2.chunk.js"
+    "static/js/main.a873eb4f.chunk.js"
   ]
 }
