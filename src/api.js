@@ -75,7 +75,8 @@ async function getEvents(lat, lon, page) {
   if (window.location.href.startsWith('http://localhost')) {
     return mockEvents.events;
   }
-
+  
+  //!navigator.onLine to check whether the user is offline
   if (!navigator.onLine) {
     const events = localStorage.getItem('lastEvents');
     return JSON.parse(events);
