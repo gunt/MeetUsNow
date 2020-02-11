@@ -4,6 +4,7 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents } from './api';
+import { WarningAlert } from './Alert'
 
 class App extends Component {
   state = {
@@ -18,7 +19,12 @@ class App extends Component {
   }
 
   updateEvents = (lat, lon, page) => {
-    // We use state to store value of lat, lon, page if user has changed it.
+    // Offline Warning //  offline users that the displayed list has been loaded from the cache
+    if (!navigator.onLine){
+      this.setState({ warningText: "You are Offline!. Events displayed list has been loaded from your last session."});
+    } else {
+      this.setState({ warningText: ""})
+    }
     if (lat && lon) {
       getEvents(lat, lon, this.state.page).then(events =>
         this.setState({ events, lat, lon })
@@ -39,6 +45,7 @@ class App extends Component {
       <div className="App">
         <CitySearch updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
+        <WarningAlert text={this.state.warningText} />
         <EventList events={this.state.events} />
       </div>
     );
