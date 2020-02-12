@@ -132,6 +132,7 @@ class App extends Component {
           {/* <p>
             Edit <code>src/App.js</code> and save to reload.
           </p> */}
+          <span>Switch to go Dark Mode</span>
           <label class="switch">
             {/* checked attribute is used to determine the state of 
               checkbox
@@ -148,7 +149,7 @@ class App extends Component {
           </label>
         
 
-        <ResponsiveContainer height={300}>
+        <ResponsiveContainer height={330}>
           <ScatterChart
             margin={{
               top: 5, right: 5, bottom: 5, left: 5,
@@ -158,7 +159,7 @@ class App extends Component {
             <XAxis type="category" dataKey="date" name="date" />
             <YAxis type="number" dataKey="number" name="number of events" />
             <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-            <Scatter data={this.getData()} fill="#8884d8" />
+            <Scatter data={this.getData()} fill="#FF7145" />
           </ScatterChart>
         </ResponsiveContainer>
         <WarningAlert text={this.state.warningText} />

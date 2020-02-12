@@ -28,7 +28,7 @@ class Event extends Component {
 
   render() {
     const event = this.props.event;
-    let colors = ["#8886D5", "#84C99E"]
+    let colors = ["#FF7145", "#84C99E"]
 
     return (
       <div className="d-flex justify-content-center">
@@ -44,7 +44,7 @@ class Event extends Component {
           {this.state.show && (
             <div className="details">
               {event.rsvp_limit && (
-                <ResponsiveContainer height={300}>
+                <ResponsiveContainer height={330}>
                   <PieChart margin={{ top: 5, right: 5, bottom: 5, left: 5 }}>
                     <Legend />
                     <Pie data={this.getData()} fill="#8884d8" label>
