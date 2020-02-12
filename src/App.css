@@ -212,13 +212,13 @@ input:checked+.slider:before {
   text-align: right;
 }
 
-@media all and (max-width: auto) {
+@media all and (max-width: 600) {
   .logo{
     width: auto;
     height: auto;
   }
 
   .card{
-    width: auto;
+    width: 600px;
   }
 }
