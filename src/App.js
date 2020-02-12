@@ -16,11 +16,62 @@ class App extends Component {
     lat: null,
     lon: null,
     page: null,
-  }
+    checked: localStorage.getItem("theme") === "dark" ? true : false,
+    /**
+     * When a user activates the dark theme we will store the value
+     * on localstorage or set default value to light if it is neither dark
+     * nor light
+     */
+    theme: localStorage.getItem("theme")
+  };
 
   componentDidMount() {
     this.updateEvents();
+    document
+      .getElementsByTagName("HTML")[0]
+      .setAttribute("data-theme", localStorage.getItem("theme"));
   }
+
+  toggleThemeChange = () => {
+    const { checked } = this.state;
+    // If theme is light then change to dark
+    if (checked === false) {
+      // Update localstorage
+      localStorage.setItem("theme", "dark");
+      /**
+       * The document.getElementsByTagName(...).setAttribute(...)
+       * will only update the value
+       */
+      // Update the data-theme attribute of our html tag
+      document
+        .getElementsByTagName("HTML")[0]
+        .setAttribute("data-theme", localStorage.getItem("theme"));
+      // Update our state
+      this.setState({
+        // Ensure our switch is on if we change to dark theme
+        checked: true
+      });
+    } else {
+      // Update localstorage
+      localStorage.setItem("theme", "light");
+      /**
+       * The document.getElementsByTagName(...).setAttribute(...)
+       * will only update the value until the App is mounted and we change
+       * the state of the switch so we will need to introduce
+       * a React lifecycle called ˝componentDidMount()˝
+       */
+      // Update the data-theme attribute of our html tag
+      document
+        .getElementsByTagName("HTML")[0]
+        .setAttribute("data-theme", localStorage.getItem("theme"));
+      // Update our state
+      this.setState({
+        // Ensure our switch is off if we change to light theme
+        checked: false
+      });
+    }
+  };
+
 
   //count how many events have a local_date value that’s equivalent to each of those dates.
   countEventsOnADate = (date) => {
@@ -72,14 +123,36 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <header className="App-header">
+      {/* <div className="App"> */}
         <CitySearch updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
-        <ResponsiveContainer height={400}>
+        
+          {/* <img src={logo} className="App-logo" alt="logo" /> */}
+          {/* <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p> */}
+          <label class="switch">
+            {/* checked attribute is used to determine the state of 
+              checkbox
+              ----------------------------------------------
+              The onChange attribute will toggle our theme change
+            */}
+            <input
+              type="checkbox"
+              // checked={this.state.checked}
+              defaultChecked={this.state.checked}
+              onChange={() => this.toggleThemeChange()}
+            />
+            <span class="slider round" />
+          </label>
+        
+
+        <ResponsiveContainer height={350}>
           <ScatterChart
             margin={{
               top: 20, right: 20, bottom: 20, left: 20,
-            }}
+            }} 
           >
             <CartesianGrid />
             <XAxis type="category" dataKey="date" name="date" />
@@ -88,8 +161,10 @@ class App extends Component {
             <Scatter data={this.getData()} fill="#8884d8" />
           </ScatterChart>
         </ResponsiveContainer>
+        <WarningAlert text={this.state.warningText} />
         <EventList events={this.state.events} />
-      </div>
+      {/* </div>       */}
+      </header>
     );
   }
 }

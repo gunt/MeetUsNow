@@ -1,7 +1,6 @@
 .App {
-  text-align: center;
-  padding: 2% 5%;
-  background-color: rgb(250, 250, 250);
+  /* padding: 2% 5%; */
+  /* background-color:#F4F9F1; */
 }
 
 .App * {
@@ -17,16 +16,124 @@ p {
   margin: 5px 0;
 }
 
+html {
+  --primary-color: #282c34;
+  --secondary-color: #ffffff;
+}
+
+/* Redefine our color variables if the data-theme attr
+  value is "dark
+*/
+
+html[data-theme="dark"] {
+  --primary-color: #fff;
+  --secondary-color: #282c34;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  padding: 3% 8%;
+  background-color: var(--secondary-color);
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(7px + 2vmin);
+  color: var(--primary-color);
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 input[type="text"], input[type="number"] {
   padding: 8px 6px 8px 10px;
   border-radius: 4px;
-  margin: 1%;
+  margin: 10px;
+  box-shadow: 0 0 3px #CC0000;
   outline: none;
   border: 0.5px solid #0898ac;
   font-size: 14px;
   line-height: 20px;
   align-self: center;
   height: 38px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #2196F3;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 22px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 .city {
@@ -66,12 +173,12 @@ input[type="text"], input[type="number"] {
   padding: 10px 10px 20px;
   margin-bottom: 10px;
   text-align: left;
-  border: 1px solid #9be0e9;
+  border: 1px solid #F48032;
   border-radius: 4px;
   position: relative;
 }
 
-.details-btn {
+.detailBtn {
   position: absolute;
   right: 5px;
   bottom: 5px;
@@ -103,4 +210,15 @@ input[type="text"], input[type="number"] {
   width: 80px;
   margin: 20px 0 50px;
   text-align: right;
+}
+
+@media all and (max-width: 400px) {
+  .logo{
+    width: 400px;
+    height: auto;
+  }
+
+  .card{
+    width: 400px;
+  }
 }
