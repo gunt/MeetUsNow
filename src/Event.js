@@ -44,8 +44,8 @@ class Event extends Component {
           {this.state.show && (
             <div className="details">
               {event.rsvp_limit && (
-                <ResponsiveContainer height={330}>
-                  <PieChart margin={{ top: 5, right: 5, bottom: 5, left: 5 }}>
+                <ResponsiveContainer height={300}>
+                  <PieChart margin={{ top: 10, right: 10, bottom: 10, left: 10 }}>
                     <Legend />
                     <Pie data={this.getData()} fill="#8884d8" label>
                     {
