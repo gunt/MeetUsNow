@@ -76,18 +76,14 @@ class App extends Component {
         <CitySearch updateEvents={this.updateEvents} />
         <NumberOfEvents updateEvents={this.updateEvents} />
         <ResponsiveContainer height={400}>
-        <ScatterChart
-          width={800}
-          height={400}
-          margin={{
-            top: 20, right: 20, bottom: 20, left: 20,
-          }}
-        >
+          <ScatterChart
+            margin={{
+              top: 20, right: 20, bottom: 20, left: 20,
+            }}
+          >
             <CartesianGrid />
             <XAxis type="category" dataKey="date" name="date" />
-            {/* <YAxis type="number" dataKey="number" name="number of events" /> */}
-            {/* Remove-Decimals */}
-            <YAxis type="number" dataKey="number" name="number of events" allowDecimals={false}/>
+            <YAxis type="number" dataKey="number" name="number of events" />
             <Tooltip cursor={{ strokeDasharray: '3 3' }} />
             <Scatter data={this.getData()} fill="#8884d8" />
           </ScatterChart>
