@@ -215,17 +215,18 @@ input:checked+.slider:before {
 
 
 
+
 .card{
-  width: 600px;
+  width: 500px;
 }
 
 @media all and (max-width: 500px) {
   .logo{
-    width: 500px;
+    width: 400px;
     height: auto;
   }
 
   .card{
-    width:460px;
+    width: 360px;
   }
 }
