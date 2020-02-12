@@ -1,5 +1,5 @@
 .App {
-  /* padding: 2% 5%; */
+  padding: 2% 5%;
   /* background-color:#F4F9F1; */
 }
 
@@ -41,7 +41,7 @@ html[data-theme="dark"] {
 }
 
 .App-header {
-  padding: 3% 8%;
+  padding: 2% 5%;
   background-color: var(--secondary-color);
   min-height: 70vh;
   display: flex;
@@ -213,13 +213,19 @@ input:checked+.slider:before {
   text-align: right;
 }
 
-@media all and (max-width: 600) {
+
+
+.card{
+  width: 600px;
+}
+
+@media all and (max-width: 500px) {
   .logo{
-    width: 600px;
+    width: 500px;
     height: auto;
   }
 
   .card{
-    width: 600px;
+    width:460px;
   }
 }
