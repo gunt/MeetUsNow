@@ -176,6 +176,7 @@ input:checked+.slider:before {
   border: 1px solid #F48032;
   border-radius: 4px;
   position: relative;
+  width: 800px auto;
 }
 
 .detailBtn {
@@ -214,7 +215,7 @@ input:checked+.slider:before {
 
 @media all and (max-width: 600) {
   .logo{
-    width: auto;
+    width: 600px;
     height: auto;
   }
 
