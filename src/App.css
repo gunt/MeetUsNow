@@ -176,7 +176,7 @@ input:checked+.slider:before {
   border: 1px solid #F48032;
   border-radius: 4px;
   position: relative;
-  width: 800px auto;
+  width: 500px auto;
 }
 
 .detailBtn {
